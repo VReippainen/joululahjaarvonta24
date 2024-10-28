@@ -16,7 +16,17 @@ def draw_lots(arr):
     # Condition 3: Should return different results on consecutive runs
     # Condition 4: Should throw ValueError if given array contains less than two elements
 
-    # YOUR CODE HERE
+    who_whom = {}
+    random.shuffle(arr)
+
+    if len(arr) < 3:
+        raise ValueError("give more elements plz")
+    mones = -1
+    for parts in arr:
+        who_whom[parts] = arr[mones]
+        mones += 1
+
+    return who_whom
     
     ## A placeholder, remove this and return the actual result.
-    return {}
+    #return {}
